@@ -3,8 +3,8 @@ import urllib.request
 import re
 
 
-html_page = urllib.request.urlopen("https://tanzeem.org/multimedia/magazines/nida-e-khilafat/")
-soup = BeautifulSoup(html_page, features='html.parser')
+nida_mag_page = urllib.request.urlopen("https://tanzeem.org/multimedia/magazines/nida-e-khilafat/")
+soup = BeautifulSoup(nida_mag_page, 'html.parser')
 
 # mag_class = soup.find_all('div', attrs={'class': 'category-list'})
 # print(mag_class)
@@ -19,4 +19,11 @@ for link in total_links:
     if magazine_add:
         magazine_links.append(magazine_add.string)
 
-print(magazine_links)
+
+latest_mag_html = urllib.request.urlopen(magazine_links[0])
+soup = BeautifulSoup(latest_mag_html, 'html.parser')
+
+download_add = soup.find_all('a', attrs={'class': 'download-btn'})
+download_link = download_add[0].attrs['href']
+
+print(download_link)
