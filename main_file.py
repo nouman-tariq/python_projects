@@ -1,13 +1,11 @@
 from bs4 import BeautifulSoup
 import urllib.request
 import re
-import requests
+
 
 nida_mag_page = urllib.request.urlopen("https://tanzeem.org/multimedia/magazines/nida-e-khilafat/")
 soup = BeautifulSoup(nida_mag_page, 'html.parser')
 
-# mag_class = soup.find_all('div', attrs={'class': 'category-list'})
-# print(mag_class)
 
 total_links = []
 magazine_links = []
