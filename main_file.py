@@ -1,7 +1,7 @@
 from bs4 import BeautifulSoup
 import urllib.request
 import re
-
+import requests
 
 nida_mag_page = urllib.request.urlopen("https://tanzeem.org/multimedia/magazines/nida-e-khilafat/")
 soup = BeautifulSoup(nida_mag_page, 'html.parser')
@@ -26,4 +26,7 @@ soup = BeautifulSoup(latest_mag_html, 'html.parser')
 download_add = soup.find_all('a', attrs={'class': 'download-btn'})
 download_link = download_add[0].attrs['href']
 
-print(download_link)
+download_mag = urllib.request.urlopen(download_link)
+magazine = open('nida.pdf', 'wb')
+magazine.write(download_mag.read())
+magazine.close()
