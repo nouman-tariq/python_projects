@@ -15,5 +15,5 @@ def unshorten_url(url):
         return url
 
 
-
-
+url = 'www.google.com'
+unshorten_url(url)
