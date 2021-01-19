@@ -1,0 +1,5 @@
+total 12K
+drwxrwxr-x 3 nouman nouman 4.0K Jan 19 16:13 .
+drwxrwxr-x 6 nouman nouman 4.0K Jan 16 01:24 ..
+-rw-rw-r-- 1 nouman nouman    0 Jan 19 16:13 information.txt
+drwxrwxr-x 2 nouman nouman 4.0K Jan 19 16:12 .vscode
