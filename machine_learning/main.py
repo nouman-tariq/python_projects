@@ -1,4 +1,5 @@
 import pandas as pd
+import matplotlib.pyplot as plt
 
 weather_data = pd.read_csv('weatherAUS.csv')
 
@@ -12,3 +13,4 @@ df = test_data[test_data.columns[cols]]
 
 
 df.plot(x= 'Date', y= 'Rainfall', kind= 'scatter')
+plt.show()
