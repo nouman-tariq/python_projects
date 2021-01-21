@@ -11,4 +11,4 @@ cols = [1, 2, 5]
 df = test_data[test_data.columns[cols]]
 
 
-print(test_data)
+df.plot(x= 'Date', y= 'Rainfall', kind= 'scatter')
